@@ -1,0 +1,13 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/morhetz/gruvbox.git
+	branch = master
+	commit = cb4e7a5643f7d2dd40e694bcbd28c4b89b185e86
+	parent = c30a27a14d920d15827fc64a47caa61fca501bc4
+	method = merge
+	update = auto
+	cmdver = 0.4.1
