@@ -1,0 +1,13 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/Chiel92/vim-autoformat.git
+	branch = master
+	commit = 354abcd3d533ba07eebc510102870d85d4e2c466
+	parent = 019c781b8bd5bce1401e8ecf247b515510ac7ec3
+	method = merge
+	update = auto
+	cmdver = 0.4.1
