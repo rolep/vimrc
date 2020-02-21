@@ -6,8 +6,8 @@
 [subrepo]
 	remote = https://github.com/Chiel92/vim-autoformat.git
 	branch = master
-	commit = 354abcd3d533ba07eebc510102870d85d4e2c466
-	parent = 019c781b8bd5bce1401e8ecf247b515510ac7ec3
+	commit = f5d5d07731005adbd2dc76cf8f47ae9a68db9783
+	parent = e354bd8b5eb950bbb6ece32b067050149fb0ad93
 	method = merge
 	update = auto
 	cmdver = 0.4.1

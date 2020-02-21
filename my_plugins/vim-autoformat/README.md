@@ -9,11 +9,25 @@ You can easily customize existing formatprogram definitions or add your own form
 When no formatprogram exists (or no formatprogram is installed) for a certain filetype,
 vim-autoformat falls back by default to indenting, (using vim's auto indent functionality), retabbing and removing trailing whitespace.
 
-## How to install
+## Requirement
+vim-autoformat requires vim to have python support (python 2 or python 3). You can check your vim has python support by running `:echo has("python3")` and `:echo has("python2")`.
 
-This plugin is supported by Vim 7.4+.
-It is required that your vim has builtin python support. You can check whether this is the case
-by running `vim --version` and check that `+python` or `+python3` is listed among features.
+__Neovim__
+Neovim does not come with python support by default, and additional setup is required.
+
+First install [pynvim](https://github.com/neovim/pynvim)
+```
+python3 -m pip install pynvim
+```
+
+And add the following configuration in your `.vimrc`
+
+```
+let g:python3_host_prog=/path/to/python/executable/
+```
+
+
+## How to install
 
 #### Vundle
 
@@ -254,6 +268,10 @@ Here is a list of formatprograms that are supported by default, and thus will be
 * `latexindent.pl` for __LaTeX__.
   Installation instructions at https://github.com/cmhughes/latexindent.pl.
 
+* `ocamlformat` for __OCaml__.
+  OCamlFormat can be installed with opam: `opam install ocamlformat`.
+  Details: https://github.com/ocaml-ppx/ocamlformat.
+  We also provide `ocp-indent` as reserve formatter.
 
 ## Help, the formatter doesn't work as expected!
 
@@ -352,7 +370,7 @@ would then only format the selected part.
 
 ## Contributing
 
-This project is community driven. I don't actively do development on vim-autoformat myself, 
+This project is community driven. I don't actively do development on vim-autoformat myself,
 as it's current state fulfills my personal needs.
 However, I will review pull requests and keep an eye on the general sanity of the code.
 
