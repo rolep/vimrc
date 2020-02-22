@@ -17,6 +17,11 @@ let s:default_registry = {
 \       'suggested_filetypes': ['python'],
 \       'description': 'Fix PEP8 issues with autopep8.',
 \   },
+\   'unify': {
+\       'function': 'ale#fixers#unify#Fix',
+\       'suggested_filetypes': ['python'],
+\       'description': 'Fix PEP8 issues with unify.',
+\   },
 \   'bibclean': {
 \       'function': 'ale#fixers#bibclean#Fix',
 \       'suggested_filetypes': ['bib'],
