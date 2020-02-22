@@ -3,7 +3,17 @@ function! cargo#Load()
 endfunction
 
 function! cargo#cmd(args)
-    execute "! cargo" a:args
+    " Trim trailing spaces. This is necessary since :terminal command parses
+    " trailing spaces as an empty argument.
+    let args = substitute(a:args, '\s\+$', '', '')
+    if has('terminal')
+        let cmd = 'terminal'
+    elseif has('nvim')
+        let cmd = 'noautocmd new | terminal'
+    else
+        let cmd = '!'
+    endif
+    execute cmd 'cargo' args
 endfunction
 
 function! s:nearest_cargo(...) abort
@@ -53,6 +63,10 @@ endfunction
 
 function! cargo#build(args)
     call cargo#cmd("build " . a:args)
+endfunction
+
+function! cargo#check(args)
+    call cargo#cmd("check " . a:args)
 endfunction
 
 function! cargo#clean(args)
